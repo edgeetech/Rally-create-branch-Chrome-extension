@@ -5,7 +5,7 @@ function onPageDetailsReceived(pageDetails) {
     if (pageDetails.url.includes('detail/userstory')) {
         document.getElementById('ticketNo').innerHTML = pageDetails.ticketNo;
         document.getElementById('ticketName').innerHTML = pageDetails.ticketName;
-        var safeTicketName = pageDetails.ticketName.replace(/ /g, "-").toLowerCase();
+        var safeTicketName = getSafeBranchName(pageDetails.ticketName);
         document.getElementById('branchName').innerHTML = pageDetails.ticketNo + '-' + safeTicketName;
 
         document.getElementById('notSupportedMessage').style.display = "none";
@@ -14,6 +14,15 @@ function onPageDetailsReceived(pageDetails) {
         document.getElementById('notSupportedMessage').style.display = "block";
     }
 }
+
+const getSafeBranchName = (ticketName)=>{
+    return ticketName
+    .replace(/ /g, "-")
+    .replace(/'/g, "")
+    .replace(/"/g, "")
+    .replace(/`/g, "")
+    .toLowerCase()
+};
 
 // Global reference to the status display SPAN
 var statusDisplay = null;

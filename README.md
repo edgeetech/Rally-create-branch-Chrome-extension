@@ -8,6 +8,7 @@ Google Chrome doesn't allow us to distrubute extensions as standalone packages. 
 
 ### Step 0
 Edit your bitbucket address in popup.js (line 29)
+
 var COMPANY_ADDRESS = 'YOUR_COMPANY_BITBUCKET_ADDRESS'; // i.e git.edgeetech.com
 
 ### Step 1 

@@ -6,6 +6,10 @@ Bitbucket branch creator extension for Chrome from Rally
 
 Google Chrome doesn't allow us to distrubute extensions as standalone packages. So you need to follow these steps in order to install this extension.
 
+### Step 0
+Edit your bitbucket address in popup.js (line 29)
+var COMPANY_ADDRESS = 'YOUR_COMPANY_BITBUCKET_ADDRESS'; // i.e git.edgeetech.com
+
 ### Step 1 
 
 Download this repository to your local 
